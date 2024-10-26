@@ -1,0 +1,6 @@
+@BussinessCard.Server_HostAddress = http://localhost:5169
+
+GET {{BussinessCard.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,5 @@
+<app-navbar></app-navbar>
+<div *ngIf="isLoading" class="loading">Loading&#8230;</div>
+<ng-container *ngIf="!isLoading">
+  <router-outlet></router-outlet>
+</ng-container>

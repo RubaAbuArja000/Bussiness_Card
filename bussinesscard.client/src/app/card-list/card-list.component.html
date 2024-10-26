@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-12">
+              <h4 class="title pull-left">Cards</h4>
+              <div class="float-end d-flex align-items-center">
+                <a [routerLink]="['/card/details']" class="btn btn-primary me-2">
+                  <i class="fa fa-plus"></i>Add New
+                </a>
+
+                <input #fileInput type="file" (change)="onFileSelected($event)" style="display: none;" />
+
+                <div ngbDropdown class="dropdown me-2">
+                  <button ngbDropdownToggle class="btn btn-secondary" type="button" id="importDropdownButton" aria-expanded="false">
+                    Import
+                  </button>
+                  <ul ngbDropdownMenu aria-labelledby="importDropdownButton">
+                    <li><a ngbDropdownItem (click)="triggerFileInput('.csv')">From Csv</a></li>
+                    <li><a ngbDropdownItem (click)="triggerFileInput('.xml')">From XML</a></li>
+                    <li><a ngbDropdownItem (click)="triggerFileInput('.png, .jpg, .jpeg')">From QR Code</a></li>
+                  </ul>
+                </div>
+
+                <div ngbDropdown class="dropdown">
+                  <button ngbDropdownToggle class="btn btn-secondary" type="button" id="exportDropdownButton" aria-expanded="false">
+                    Export
+                  </button>
+                  <ul ngbDropdownMenu aria-labelledby="exportDropdownButton">
+                    <li><a ngbDropdownItem (click)="exportToCsv()">Export To CSV</a></li>
+                    <li><a ngbDropdownItem (click)="exportToXml()">Export To XML</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="panel-body table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let card of cards; let i = index">
+                <td scope="row">{{ card.cardId }}</td>
+                <td>{{ card.name }}</td>
+                <td>
+                  <span *ngIf="card.gender==1">
+                    Male
+                  </span>
+                  <span *ngIf="card.gender==2">
+                    Female
+                  </span>
+                </td>
+                <td>{{ card.dateOfBirth | date }}</td>
+                <td>{{ card.email }}</td>
+                <td>{{ card.phone }}</td>
+                <td>{{ card.address }}</td>
+                <td><img [src]="'https://localhost:7119/api/BusinessCard/GetImage/' + card.photo" alt="Photo" width="50" /></td>
+                <td>
+                  <button type="button" class="btn btn-light" [routerLink]="['/card/details', card.cardId]">Edit</button>
+                  <button type="button" class="ms-2 btn btn-danger" (click)="onDelete(card.cardId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

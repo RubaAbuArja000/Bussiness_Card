@@ -1,0 +1,48 @@
+<div *ngIf="!isLoading" class="container mt-4">
+  <h2 class="mb-4">{{ card.cardId ? 'Update Card' : 'Create Card' }}</h2>
+  <form (ngSubmit)="onSubmit()" #cardForm="ngForm">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input id="name" [(ngModel)]="card.name" name="name" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender:</label>
+      <select id="gender" [(ngModel)]="card.gender" name="gender" required class="form-select">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+        <option value="2">Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="dateOfBirth" class="form-label">Date of Birth:</label>
+      <input id="dateOfBirth" type="date" [(ngModel)]="card.dateOfBirth" name="dateOfBirth" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input id="email" type="email" [(ngModel)]="card.email" name="email" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone:</label>
+      <input id="phone" type="tel" [(ngModel)]="card.phone" name="phone" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">Address:</label>
+      <input id="address" [(ngModel)]="card.address" name="address" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="photo" class="form-label">Photo URL:</label>
+      <input id="photo" [(ngModel)]="card.photo" name="photo" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      {{ card.cardId ? 'Update' : 'Create' }}
+    </button>
+  </form>
+</div>

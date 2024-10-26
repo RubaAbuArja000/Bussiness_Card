@@ -1,0 +1,47 @@
+<Cards>
+    <Card>
+        <Name>John Doe</Name>
+        <Gender>Male</Gender>
+        <DateOfBirth>1990-01-01</DateOfBirth>
+        <Email>john.doe@example.com</Email>
+        <Phone>123-456-7890</Phone>
+        <Address>123 Main St, Anytown, Nunavut</Address>
+        <Photo>photo1.jpg</Photo>
+    </Card>
+    <Card>
+        <Name>Jane Smith</Name>
+        <Gender>Female</Gender>
+        <DateOfBirth>1985-05-15</DateOfBirth>
+        <Email>jane.smith@example.com</Email>
+        <Phone>098-765-4321</Phone>
+        <Address>456 Elm St, Othertown, Nunavut</Address>
+        <Photo>photo2.jpg</Photo>
+    </Card>
+    <Card>
+        <Name>Alex Johnson</Name>
+        <Gender>Male</Gender>
+        <DateOfBirth>1992-03-30</DateOfBirth>
+        <Email>alex.johnson@example.com</Email>
+        <Phone>555-123-4567</Phone>
+        <Address>789 Oak St, Thistown, Nunavut</Address>
+        <Photo>photo3.jpg</Photo>
+    </Card>
+    <Card>
+        <Name>Emily Davis</Name>
+        <Gender>Female</Gender>
+        <DateOfBirth>1988-12-22</DateOfBirth>
+        <Email>emily.davis@example.com</Email>
+        <Phone>321-654-9870</Phone>
+        <Address>101 Pine St, Thatown, Nunavut</Address>
+        <Photo>photo4.jpg</Photo>
+    </Card>
+    <Card>
+        <Name>Chris Lee</Name>
+        <Gender>Male</Gender>
+        <DateOfBirth>1995-07-04</DateOfBirth>
+        <Email>chris.lee@example.com</Email>
+        <Phone>222-333-4444</Phone>
+        <Address>202 Maple St, Heretown, Nunavut</Address>
+        <Photo>photo5.jpg</Photo>
+    </Card>
+</Cards>
